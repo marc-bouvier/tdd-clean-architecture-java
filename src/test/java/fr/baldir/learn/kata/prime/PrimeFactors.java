@@ -5,10 +5,10 @@ import java.util.List;
 
 public class PrimeFactors {
 
-    public List<Integer> generate(int n) {
-        List<Integer> primeFactors = new ArrayList<>();
+    public List<Long> generate(long n) {
+        List<Long> primeFactors = new ArrayList<>();
 
-            for (int potentialDivisor = 2;n!=1;potentialDivisor++) {
+            for (long potentialDivisor = 2;n!=1;potentialDivisor++) {
                 for (;n % potentialDivisor == 0;n/=potentialDivisor) {
                     primeFactors.add(potentialDivisor);
                 }

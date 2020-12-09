@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -33,19 +35,21 @@ public class PrimeFactorsTest {
         assertGeneratedPrimeFactors(3, 3); // varaible
         assertGeneratedPrimeFactors(4, 2, 2); // condition, statement,
         assertGeneratedPrimeFactors(8, 2, 2,2);  // boucle
-        //        assertGeneratedPrimeFactors(9, 3,3);  // boucle
-
+                assertGeneratedPrimeFactors(9, 3,3);  // boucle
+        assertGeneratedPrimeFactors(78972378232L ,2, 2, 2, 11, 31, 1597, 18127);
 
 
 
     }
 
-    private List<Integer> generateFor(int i) {
-        return new PrimeFactors().generate(i);
+    private List<Long> generateFor(long n) {
+        return new PrimeFactors().generate(n);
     }
 
-    private void assertGeneratedPrimeFactors(int n, Integer... expectedPrimeFactors) {
+    private void assertGeneratedPrimeFactors(long n, Integer... expectedPrimeFactors) {
         assertThat(generateFor(n))
-                .isEqualTo(Arrays.asList(expectedPrimeFactors));
+                .isEqualTo(Arrays.stream(expectedPrimeFactors)
+                        .map(Integer::longValue).collect(Collectors.toList()));
+
     }
 }
