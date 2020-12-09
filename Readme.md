@@ -192,3 +192,19 @@ On peut le commenter et on le ré-écrit en TDD;
 
 TDD tout comme mutation testing (ex. pitest) est un détecteur de mensonge de ton code.
 
+> "Mode cerise"
+
+Une implem : une vraie, une fausse
+
+Le backend mocké
+
+Ici tdd te dit que ton code est pas testable.
+
+Ici le mode cerise il expliue la clean archi.
+
+## Test unitaire lent
+
+Un test unitaire lent n'est pas unitaire
+
+## Inversion de dépendence!
+
