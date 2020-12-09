@@ -2,6 +2,7 @@ package fr.baldir.learn.kata.prime;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,13 +36,14 @@ public class PrimeFactorsTest {
         // Au lieu de 3 on pirrait tester 1. emptyList
         // C'est un degenerate case (cas subtil)
         // Le cas le plus simple
-        assertThat(generateFor(1))
-                .isEqualTo(Collections.emptyList());
-
+//        assertThat(generateFor(1))
+//                .isEqualTo(Collections.emptyList());
+        assertGeneratedPrimeFactors(1);
         // Quel va être le 2eme test?
         // On veut faire un nouveau test rouge qui ajoute une fonctionalité
-        assertThat(generateFor(2))
-                .isEqualTo(Collections.singletonList(2));
+//        assertThat(generateFor(2))
+//                .isEqualTo(Collections.singletonList(2));
+        assertGeneratedPrimeFactors(2,2);
         // Le but c'est d'aller le plus vite possible (ca peut etre crade
 
         // Refactor test
@@ -51,5 +53,9 @@ public class PrimeFactorsTest {
 
     private List<Integer> generateFor(int i) {
         return new PrimeFactors().generate(i);
+    }
+    private void assertGeneratedPrimeFactors(int n,Integer ... expectedPrimeFactors){
+        assertThat(generateFor(n))
+                .isEqualTo(Arrays.asList(expectedPrimeFactors));
     }
 }
