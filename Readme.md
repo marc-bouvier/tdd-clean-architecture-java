@@ -1,6 +1,6 @@
 # Formation TDD et Clean Architecture dans le monde Java
 
-![Java CI with Maven](https://github.com/marc-bouvier/tdd-clean-architecture-java/workflows/Java%20CI%20with%20Maven/badge.svg)
+[![Java CI with Maven](https://github.com/marc-bouvier/tdd-clean-architecture-java/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/marc-bouvier/tdd-clean-architecture-java/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=marc-bouvier_tdd-clean-architecture-java&metric=alert_status)](https://sonarcloud.io/dashboard?id=marc-bouvier_tdd-clean-architecture-java)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=marc-bouvier_tdd-clean-architecture-java&metric=coverage)](https://sonarcloud.io/dashboard?id=marc-bouvier_tdd-clean-architecture-java)
 
@@ -206,10 +206,38 @@ Ici le mode cerise il expliue la clean archi.
 
 Un test unitaire lent n'est pas unitaire
 
-## Inversion de dépendence!
+## Clean architecture
 
 - REndre les **logiques d'orchetration** testables.
 - Ne pas dépendre de technos sous-jascentes
 - Remettre à plus tard des choix techniques lourds
     - Pouvoir faire des POC
+
+### Adapters primaires
+
+Ceux qui interrogent les use-case
+- Spring boot controler, CLI (console), Event subscriber
+
+### Adapters Secondaires
+
+S comme en sortie
+
+### Use case interactor
+
+### Presenters
+
+## Les types de tests
+
+- Acceptation +unitaires (fusionnés)
+    - milliseconde
+- Test Intégration : 
+    - Mauvaise définition : test qui passe plusieurs classes
+        - pb test qui test 2 choses (logique métier et infra)
+    - Bien : le test il ne teste que dans l'adapter
+        - Je teste que les requêtes SQL sont  correctes
+        - Beaucoup moins de tests d'intégration à faire
+        - Possibilité de les lancer dans un autre processus (ou une autre suite ou processus)
+- Tests end to end 
+
+> TDD c'est du pair-programming avec ton ordinateur
 
