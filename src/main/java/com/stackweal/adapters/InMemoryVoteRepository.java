@@ -3,9 +3,7 @@ package com.stackweal.adapters;
 import com.stackweal.hexagone.gateways.VoteRepository;
 import com.stackweal.hexagone.models.Vote;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class InMemoryVoteRepository implements VoteRepository {
