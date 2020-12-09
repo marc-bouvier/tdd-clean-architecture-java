@@ -259,4 +259,10 @@ On s'oblige à casser la symmétrie entre les packages de test et de prod.
 
 Ainsi on est obligé d'utiliser les API publiques.
 
-  
+# Nested tests
+
+- permet de classifier les tests
+    - des noms plus courts
+    - une hierarchie des setUp
+        - quand tu as un before global
+        - tu peux initialiser des trucs supplémentaires que quand un test nested en a besoin
