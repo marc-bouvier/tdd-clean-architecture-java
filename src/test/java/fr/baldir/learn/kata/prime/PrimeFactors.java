@@ -9,9 +9,8 @@ public class PrimeFactors {
         List<Integer> primeFactors = new ArrayList<>();
 
             for (int potentialDivisor = 2;n!=1;potentialDivisor++) {
-                while (n % potentialDivisor == 0) {
+                for (;n % potentialDivisor == 0;n/=potentialDivisor) {
                     primeFactors.add(potentialDivisor);
-                    n /= potentialDivisor;
                 }
 
         }
