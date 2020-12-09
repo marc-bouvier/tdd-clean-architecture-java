@@ -8,6 +8,6 @@ import org.junit.runner.RunWith;
         features = "classpath:features",
         glue = "fr.baldir.learn")
 @RunWith( Cucumber.class )
-public class CucumberTestRunner {
+public class CucumberTest {
 
 }

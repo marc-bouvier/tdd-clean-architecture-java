@@ -20,3 +20,7 @@ Ressources conseillées
     - [TDD ne ralentit pas, au contraire on va plus vite !](https://wealcomecompany.com/blog/tdd-video-demonstration-conway-michael-azerhad-wealcome)
     - [Démonstration complète de BDD, ATDD et TDD avec Java](https://wealcomecompany.com/blog/bdd-tdd-full-java-demo-michael-azerhad-wealcome)
     - [Démonstration la plus connue de TDD avec Java et en français](https://wealcomecompany.com/blog/tdd-d%C3%A9monstration-video-fizzbuzz-michael-azerhad-wealcome)
+    
+    
+## Kata le lancer de la roulette
+
