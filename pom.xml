@@ -86,7 +86,7 @@
         <sonar.projectKey>marc-bouvier_tdd-clean-architecture-java</sonar.projectKey>
         <sonar.organization>marc-bouvier-github</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.java.libraries>**/target/classes</sonar.java.libraries>
+        <sonar.java.binaries>target/classes</sonar.java.binaries>
     </properties>
 
 
