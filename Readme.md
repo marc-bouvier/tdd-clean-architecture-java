@@ -150,3 +150,4 @@ Différent de tester le comment (on peut le faire mais on efface le test après)
 > Je n'ai pas de framework de mock!
 -> La tentation de faire mal
 
+![](docs/assets/TDD_transformation_cheat_sheet.png)
