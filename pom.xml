@@ -19,14 +19,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-                <configuration>
-                    <argLine>${argLine}</argLine>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
@@ -94,8 +86,13 @@
         <sonar.projectKey>marc-bouvier_tdd-clean-architecture-java</sonar.projectKey>
         <sonar.organization>marc-bouvier-github</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.language>java</sonar.language>
         <sonar.java.binaries>target/classes</sonar.java.binaries>
         <sonar.java.libraries>target/classes</sonar.java.libraries>
+        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco/jacoco-ut.exec</sonar.jacoco.reportPath>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/jacoco/jacoco-ut/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     </properties>
 
 
