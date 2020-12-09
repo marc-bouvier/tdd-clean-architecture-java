@@ -16,6 +16,4 @@ public class Vote {
     public void increment() {
         this.i += 1;
     }
-
-
 }
