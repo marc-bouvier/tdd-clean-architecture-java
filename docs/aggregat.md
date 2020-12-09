@@ -4,7 +4,7 @@ C'est quoi un aggrégat
 
 > Ils n'ont pas de sens en dehors d'une **transaction**
 
-Dans un use case tu ne dois pas avoir 2 persist sur 2 repositories différents
+Dans un use-case tu ne dois pas avoir 2 persist sur 2 repositories différents
 
 Car ils ne devraient pas partager les mêmes invariants
 

@@ -249,3 +249,14 @@ S comme en sortie
 > TDD c'est du pair-programming avec ton ordinateur
 
 > Il y a une manie d'appeler Test Unitaire ce qui n'en est pas
+
+
+# Mode mirroring
+
+package de test qui correspond au package de prod.
+
+On s'oblige à casser la symmétrie entre les packages de test et de prod.
+
+Ainsi on est obligé d'utiliser les API publiques.
+
+  
