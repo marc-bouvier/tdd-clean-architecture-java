@@ -177,3 +177,18 @@ https://news.ycombinator.com/item?id=10194242
 
 Dans la réunion avec le métier (ex 20min). Tu le challenge régulièrement.
 
+Le gherkin va synthétiser la conversation et les exemple.
+Attention le gherkin doit pouvoir etre converti en code.
+
+Et là on peut avancer avec la double boucle TDD.
+
+Le scénario BDD sert à tester que l'on fait le bon code (ce qui est attendu)
+Les test TDD servent à test qu'on l'on fait du code juste (qualité, craft)
+
+## Attention
+
+On ne doit pas tester du code deja ecrit
+On peut le commenter et on le ré-écrit en TDD;
+
+TDD tout comme mutation testing (ex. pitest) est un détecteur de mensonge de ton code.
+
