@@ -230,14 +230,22 @@ S comme en sortie
 
 - Acceptation +unitaires (fusionnés)
     - milliseconde
-- Test Intégration : 
+- Test Intégration : tests en réel
     - Mauvaise définition : test qui passe plusieurs classes
+        - La vraie base en local par ex
         - pb test qui test 2 choses (logique métier et infra)
     - Bien : le test il ne teste que dans l'adapter
-        - Je teste que les requêtes SQL sont  correctes
+        - Je teste que les requêtes SQL sont correctes
         - Beaucoup moins de tests d'intégration à faire
         - Possibilité de les lancer dans un autre processus (ou une autre suite ou processus)
-- Tests end to end 
+        
+- Tests end to end
+    - IL test "en paranoia"
+        - Si ta configuration est bien ficelée (Spring boot conf)
+        - Formatage du Json en retour
+            - Cas OK
+            - Cas Erreur (ex. 400) 
 
 > TDD c'est du pair-programming avec ton ordinateur
 
+> Il y a une manie d'appeler Test Unitaire ce qui n'en est pas
