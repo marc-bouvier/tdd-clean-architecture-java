@@ -30,6 +30,7 @@ public class PrimeFactorsTest {
 
         assertGeneratedPrimeFactors(1);
         assertGeneratedPrimeFactors(2, 2);
+        assertGeneratedPrimeFactors(3, 3);
 
     }
 
