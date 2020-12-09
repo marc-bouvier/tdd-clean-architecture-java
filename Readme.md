@@ -266,3 +266,4 @@ Ainsi on est obligé d'utiliser les API publiques.
     - une hierarchie des setUp
         - quand tu as un before global
         - tu peux initialiser des trucs supplémentaires que quand un test nested en a besoin
+    - peut être fold dans l'IDE
