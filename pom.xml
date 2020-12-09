@@ -95,9 +95,6 @@
         <sonar.language>java</sonar.language>
         <sonar.java.binaries>target/classes</sonar.java.binaries>
         <sonar.java.libraries>target/classes</sonar.java.libraries>
-        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco/jacoco-ut.exec</sonar.jacoco.reportPath>
-        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/jacoco/jacoco-ut/jacoco.xml
-        </sonar.coverage.jacoco.xmlReportPaths>
         <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
         <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
