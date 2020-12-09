@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 // Ex. qui sert de test d'acceptation
 // 78972378232 => 2, 2, 2, 11, 31, 1597, 18127
 
-public class PrimeFactorsTest {
+class PrimeFactorsTest {
 
     // On sait pas par quel bout le prendre
     // On se bloque
