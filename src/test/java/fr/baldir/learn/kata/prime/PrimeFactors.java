@@ -8,10 +8,11 @@ public class PrimeFactors {
     public List<Integer> generate(int n) {
         List<Integer> primeFactors = new ArrayList<>();
         if (n != 1) {
-            if (n % 2 == 0) { //4
-                primeFactors.add(2); // 2 X
+            if (n % 2 == 0) {
+                primeFactors.add(2);
                 n /= 2;
             }
+            if(n!=1)
                 primeFactors.add(n);
         }
         return primeFactors;
