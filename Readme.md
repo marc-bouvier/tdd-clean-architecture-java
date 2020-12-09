@@ -26,6 +26,115 @@ Ressources conseillées
 
 On commence à être dépassé par le foncionnel qui devient complexe.
 Et là, les tests d'intégration flaky et les foules de mock nous bloquent.
- 
-## Kata le lancer de la roulette
+
+- Perte de la conaissance métier
+
+
+## Ce que TDD peut apporter
+
+### 1. La sur-confiance dud éveloppeur
+
+Livraisons qui ne sont pas maitrisées.
+
+Il ya  toujours des surprises une fois que c'est joué en prod.
+
+> Ca marche sur ma machine
+
+C'est non professionnel. Faute d'inattention.
+
+### 2. La lenteur pour trouver des bons algos
+
+Ex. énormément de temps passé 
+- Try and error dans le browser
+- Temps passé dans le débugger
+
+Etude Société générale
+
+Quotdien d'un dev
+
+Il passe 6 min par jour à écrire du code.
+
+### 3. Du code mort inaccessible à foison
+
+En vrais sur des grosses méthodes
+- du code défensif qui n'a pas lieu d'etre
+- du code qui n'a plus lieu d'être
+
+Dans tous les projets où il n'y  pas de discipline
+
+On a tres peur de corriger ca et on blionde de d"éfense notre code
+
+-> Devient tres vite illisilbe et on passe de plus en plus de temps à lire du code.
+
+### 4. Peur de toucher au code existant
+
+Peur de casser..
+
+Ex. Tech lead :" ne touchez pas au copde qui concerne pas le ticket"
+->> workaround
+
+> Le workaround prime sur la guérison
+
+
+On régresse. Et il y a jamais d'amliration .
+On touche pas au code des autres.
+Pas de propriété collective du code
+
+### 5. Perte de la connaissance métier
+
+OUI !
+
+On aimerait que l'intention reste.
+
+On ne veut pas toucher aux commentaires des autres
+
+### Ne pas s'étonner
+
+- si les dlais explosent
+- anormalient qu aumenent
+conde imcoprehensible
+- promesses non tenues aux clients
+- **Devs songent deja à changer de mission** pour malheureusement reproduire 
+
+## Comment éviter tous ces problèlmes?
+
+Code review. Souvent baclées. Pas suffisant. C'est une activité humaine.
+
+Nommage des choses : classes, méthodes variables.
+
+Pouvoir lire le code comme une histoire.
+
+Il peut y avoir des commmentaires utiles. 
+ex. Raisons pour lesquelles on a du faire un workaround( pourquoi on a fait un choix inattendu)
+
+> Extract till you drop 
+
+Extraire les méthodes jusqu'à ce qu'on ne puisse plus le faire.
+
+> Ce te force à bien nommer les choses et a refactorer le code.
+
+Petites méthodes single responsibility. Les méthodes deviennent **composables**.
+
+Respecter l'ordre de lecture.
+
+> Une fonction doit faire **Une seule chose**
+
+SRP. 
+
+## Définition de TDD
+
+> Se **faire guider** dans les algos
+
+Faire bien du premier coup -> je passe moins de temps.
+
+TDD c'est ton point de sauvegarde contre les interruptions.
+
+TODO : citation des slides "Qu'est ce que TDD"?
+
+Le problème de TDD dans l'esprit des gens. Dommage le mot "Test".
+
+On veut être **guidés**. TDD nous permet de nous **laisser porter** par des feedback courts qui nous permettent de 
+rectifier notre trajectoire quand on fait fausse route. et dès qu'on a fini.
+
+> C'est bcp plus noble d'enlever que rajouter des choses.
 
