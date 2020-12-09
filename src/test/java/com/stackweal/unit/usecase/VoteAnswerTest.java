@@ -23,10 +23,8 @@ public class VoteAnswerTest {
             void shouldVoteForIt() {
 
                 feedVotes(answerId, 0);
-                new VoteAnswer(voteRepository).handle(answerId);
-//        // Le domaine doit toujours parler UUID
-//        // Dans la vraie vie, ce qui est lecture ne passe pas par un repo
-                assertThat(voteRepository.byAnswerId(answerId)).isEqualTo(new Vote(answerId, 1)); // une seule réponse pour le moment (micro-test)
+                vote();
+                assertAnswerVote(1);
             }
         }
 
@@ -36,16 +34,23 @@ public class VoteAnswerTest {
             void shouldVoteForIt() {
 
                 feedVotes(answerId, 1);
-                new VoteAnswer(voteRepository).handle(answerId);
-//        // Le domaine doit toujours parler UUID
-//        // Dans la vraie vie, ce qui est lecture ne passe pas par un repo
-                assertThat(voteRepository.byAnswerId(answerId)).isEqualTo(new Vote(answerId, 2)); // une seule réponse pour le moment (micro-test)
+                vote();
+                assertAnswerVote(2);
             }
         }
+
     }
 
     private void feedVotes(String answerId, int value) {
         voteRepository.feed(answerId, value);
+    }
+
+    private void assertAnswerVote(int expectedValue) {
+        assertThat(voteRepository.byAnswerId(answerId)).isEqualTo(new Vote(answerId, expectedValue)); // une seule réponse pour le moment (micro-test)
+    }
+
+    private void vote() {
+        new VoteAnswer(voteRepository).handle(answerId);
     }
 
 }
