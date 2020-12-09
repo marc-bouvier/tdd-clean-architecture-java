@@ -1,5 +1,9 @@
 # Formation TDD et Clean Architecture dans le monde Java
 
+![Java CI with Maven](https://github.com/marc-bouvier/tdd-clean-architecture-java/workflows/Java%20CI%20with%20Maven/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=marc-bouvier_tdd-clean-architecture-java&metric=alert_status)](https://sonarcloud.io/dashboard?id=marc-bouvier_tdd-clean-architecture-java)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=marc-bouvier_tdd-clean-architecture-java&metric=coverage)](https://sonarcloud.io/dashboard?id=marc-bouvier_tdd-clean-architecture-java)
+
 2020-12-09 - 2020-12-10
 
 [Formation TDD et Clean Architecture dans le monde Java](https://wealcomecompany.com/wealcome-java-tdd-clean-architecture-formation)
