@@ -33,7 +33,7 @@ public class PrimeFactorsTest {
         assertGeneratedPrimeFactors(3, 3); // varaible
         assertGeneratedPrimeFactors(4, 2, 2); // condition, statement,
         assertGeneratedPrimeFactors(8, 2, 2,2);  // boucle
-        assertGeneratedPrimeFactors(9, 3,3);  // boucle
+        //        assertGeneratedPrimeFactors(9, 3,3);  // boucle
 
 
 

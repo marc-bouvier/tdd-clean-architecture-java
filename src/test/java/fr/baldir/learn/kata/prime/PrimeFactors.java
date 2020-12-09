@@ -7,10 +7,14 @@ public class PrimeFactors {
 
     public List<Integer> generate(int n) {
         List<Integer> primeFactors = new ArrayList<>();
+        int potentialDivisor = 2;
         if (n != 1) {
-            while (n % 2 == 0) { // un while c'est plusieurs if (on généralise)
-                primeFactors.add(2);
-                n /= 2;
+            while (n!=1) {
+                while (n % potentialDivisor == 0) {
+                    primeFactors.add(potentialDivisor);
+                    n /= potentialDivisor;
+                }
+                potentialDivisor++;
             }
             if(n!=1)
                 primeFactors.add(n);
