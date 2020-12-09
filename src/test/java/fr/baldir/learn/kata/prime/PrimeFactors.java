@@ -16,8 +16,7 @@ public class PrimeFactors {
                 }
                 potentialDivisor++;
             }
-            if(n!=1)
-                primeFactors.add(n);
+
         }
         return primeFactors;
     }
