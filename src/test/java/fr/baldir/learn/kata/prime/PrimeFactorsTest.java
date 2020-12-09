@@ -28,10 +28,14 @@ public class PrimeFactorsTest {
     @Test
     void should_generate_the_prime_factors_of_a_given_number() {
 
-        assertGeneratedPrimeFactors(1);
+        assertGeneratedPrimeFactors(1); // constante
         assertGeneratedPrimeFactors(2, 2);
-        assertGeneratedPrimeFactors(3, 3);
-        assertGeneratedPrimeFactors(4, 2, 2);
+        assertGeneratedPrimeFactors(3, 3); // varaible
+        assertGeneratedPrimeFactors(4, 2, 2); // condition
+        assertGeneratedPrimeFactors(6, 2, 3); // coup de bol ca passe avec le 6
+
+
+
 
     }
 
