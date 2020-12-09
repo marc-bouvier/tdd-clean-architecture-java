@@ -8,7 +8,7 @@ public class PrimeFactors {
     public List<Integer> generate(int n) {
         List<Integer> primeFactors = new ArrayList<>();
         if (n != 1) {
-            if (n % 2 == 0) {
+            while (n % 2 == 0) { // un while c'est plusieurs if (on généralise)
                 primeFactors.add(2);
                 n /= 2;
             }
