@@ -27,34 +27,17 @@ public class PrimeFactorsTest {
     // Ex. on donne un titre générique au premier test
     @Test
     void should_generate_the_prime_factors_of_a_given_number() {
-        // Programming by wishful thinking
-        // Ce que j'aimerais voir comme API
-        // On se laisse guider par le compilateur et l'ide
-//        assertThat(new PrimeFactors(3).generate())
-//                .isEqualTo(Collections.singletonList(3));
-//
-        // Au lieu de 3 on pirrait tester 1. emptyList
-        // C'est un degenerate case (cas subtil)
-        // Le cas le plus simple
-//        assertThat(generateFor(1))
-//                .isEqualTo(Collections.emptyList());
+
         assertGeneratedPrimeFactors(1);
-        // Quel va être le 2eme test?
-        // On veut faire un nouveau test rouge qui ajoute une fonctionalité
-//        assertThat(generateFor(2))
-//                .isEqualTo(Collections.singletonList(2));
-        assertGeneratedPrimeFactors(2,2);
-        // Le but c'est d'aller le plus vite possible (ca peut etre crade
-
-        // Refactor test
-
+        assertGeneratedPrimeFactors(2, 2);
 
     }
 
     private List<Integer> generateFor(int i) {
         return new PrimeFactors().generate(i);
     }
-    private void assertGeneratedPrimeFactors(int n,Integer ... expectedPrimeFactors){
+
+    private void assertGeneratedPrimeFactors(int n, Integer... expectedPrimeFactors) {
         assertThat(generateFor(n))
                 .isEqualTo(Arrays.asList(expectedPrimeFactors));
     }
