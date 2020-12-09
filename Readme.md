@@ -138,3 +138,15 @@ rectifier notre trajectoire quand on fait fausse route. et dès qu'on a fini.
 
 > C'est bcp plus noble d'enlever que rajouter des choses.
 
+## Définition de test unitaire
+
+Tester un comportement (le quoi)
+- ex. calculer la moyenne générale des éléève sur 4 années
+
+Différent de tester le comment (on peut le faire mais on efface le test après)
+    - ex. tester que la somme est bien faite (détail d'implémentation)
+    - ex. tester la fonction moyenne
+
+> Je n'ai pas de framework de mock!
+-> La tentation de faire mal
+
