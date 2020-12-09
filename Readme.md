@@ -151,3 +151,29 @@ Différent de tester le comment (on peut le faire mais on efface le test après)
 -> La tentation de faire mal
 
 ![](docs/assets/TDD_transformation_cheat_sheet.png)
+
+## Attention cucumber
+
+Si ton client n'est pas impliqué, tu te tires une balle dans le pied...
+
+Le plus dur avec BDD c'est que tout est distribué partout.
+World object devient très vite compliqué et couplé.
+
+Ian cooper. 
+
+> Le TDD, c'est du BBD quand c'est bien fait
+
+Le BDD c'est un test qui est avancé. 
+Et puis tu as une suite de tests unitaires en boucle TDD.
+Le dernier test de la suite est le test du scénario (le test d'acceptation)
+
+En formulant ton gherkin, tu peux apporter "le perfectionnisme de l'user story".
+
+Il vaut mieux s'en servir comme un outil pour aller vers des conversations avec le métier.
+
+Le gherkin est la source de confiance. Le code doit refléter ça.
+
+https://news.ycombinator.com/item?id=10194242
+
+Dans la réunion avec le métier (ex 20min). Tu le challenge régulièrement.
+
