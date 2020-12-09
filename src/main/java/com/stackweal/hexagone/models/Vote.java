@@ -12,7 +12,7 @@ public class Vote {
     }
 
     public void increment() {
-        this.i = 1;
+        this.i += 1;
     }
 
     @Override
