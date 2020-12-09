@@ -3,16 +3,16 @@ package com.stackweal.hexagone.models;
 import java.util.Objects;
 
 public class Vote {
-    private  int i;
+    private int i;
     private String answerId;
 
-    public Vote(String answerId,int i) {
-
+    public Vote(String answerId, int i) {
+        this.answerId = answerId;
         this.i = i;
     }
 
     public void increment() {
-       this.i=1;
+        this.i = 1;
     }
 
     @Override
