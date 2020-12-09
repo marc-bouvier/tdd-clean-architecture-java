@@ -5,15 +5,15 @@ import lombok.NonNull;
 
 @EqualsAndHashCode
 public class Vote {
-    private int i;
+    private int value;
     private final String answerId;
 
-    public Vote(@NonNull String answerId, int i) {
+    public Vote(@NonNull String answerId, int value) {
         this.answerId = answerId;
-        this.i = i;
+        this.value = value;
     }
 
     public void increment() {
-        this.i += 1;
+        this.value += 1;
     }
 }
