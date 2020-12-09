@@ -7,13 +7,12 @@ public class PrimeFactors {
 
     public List<Integer> generate(int n) {
         List<Integer> primeFactors = new ArrayList<>();
-        int potentialDivisor = 2;
-            while (n!=1) {
+
+            for (int potentialDivisor = 2;n!=1;n++) {
                 while (n % potentialDivisor == 0) {
                     primeFactors.add(potentialDivisor);
                     n /= potentialDivisor;
                 }
-                potentialDivisor++;
 
         }
         return primeFactors;
