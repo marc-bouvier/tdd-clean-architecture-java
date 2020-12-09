@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DummyStepDefs implements En {
     public DummyStepDefs() {
         Given("^the project has no real business use cases$", () -> {
-
+            new Dummy().removeMe();
         });
         Then("^this dummy feature should exist$", () -> {
             // dummy.feature should not exist

@@ -2,7 +2,7 @@ package fr.baldir.learn;
 
 public class Dummy {
 
-    public static void main(String[] args) {
-        System.out.printf("Hello World!");
+    public void removeMe() {
+        throw new UnsupportedOperationException("I am not real! please remove me!");
     }
 }
