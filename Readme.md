@@ -208,3 +208,8 @@ Un test unitaire lent n'est pas unitaire
 
 ## Inversion de dépendence!
 
+- REndre les **logiques d'orchetration** testables.
+- Ne pas dépendre de technos sous-jascentes
+- Remettre à plus tard des choix techniques lourds
+    - Pouvoir faire des POC
+
