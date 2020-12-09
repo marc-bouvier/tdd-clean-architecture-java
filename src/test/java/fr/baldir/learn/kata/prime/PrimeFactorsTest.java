@@ -32,7 +32,7 @@ public class PrimeFactorsTest {
         assertGeneratedPrimeFactors(2, 2);
         assertGeneratedPrimeFactors(3, 3); // varaible
         assertGeneratedPrimeFactors(4, 2, 2); // condition
-        assertGeneratedPrimeFactors(6, 2, 3); // coup de bol ca passe avec le 6
+        assertGeneratedPrimeFactors(8, 2, 2,2);
 
 
 
