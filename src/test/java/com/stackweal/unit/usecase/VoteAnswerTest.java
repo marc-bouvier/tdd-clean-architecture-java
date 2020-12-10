@@ -1,6 +1,6 @@
 package com.stackweal.unit.usecase;
 
-import com.stackweal.adapters.InMemoryVoteRepository;
+import com.stackweal.adapters.secondary.gateways.InMemoryVoteRepository;
 import com.stackweal.hexagone.models.Vote;
 import com.stackweal.hexagone.usecases.VoteAnswer;
 import org.junit.jupiter.api.Nested;

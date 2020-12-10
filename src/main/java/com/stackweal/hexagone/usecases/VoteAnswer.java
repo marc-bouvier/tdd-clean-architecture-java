@@ -3,9 +3,13 @@ package com.stackweal.hexagone.usecases;
 import com.stackweal.hexagone.gateways.VoteRepository;
 import com.stackweal.hexagone.models.Vote;
 
+/**
+ * An use case is the entry point of the domain.
+ * It should not depend on frameworks. Only rely on domain classes and ports.
+ */
 public class VoteAnswer {
 
-    private VoteRepository voteRepository;
+    private final VoteRepository voteRepository;
 
     public VoteAnswer(VoteRepository voteRepository) {
         this.voteRepository = voteRepository;
@@ -14,7 +18,5 @@ public class VoteAnswer {
     public void handle(String answerId) {
         Vote vote = voteRepository.byAnswerId(answerId);
         vote.increment();
-//        voteRepository.save(answerId,vote);
-
     }
 }

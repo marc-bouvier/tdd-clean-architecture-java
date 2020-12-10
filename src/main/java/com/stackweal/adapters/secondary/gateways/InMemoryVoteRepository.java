@@ -1,4 +1,4 @@
-package com.stackweal.adapters;
+package com.stackweal.adapters.secondary.gateways;
 
 import com.stackweal.hexagone.gateways.VoteRepository;
 import com.stackweal.hexagone.models.Vote;
@@ -7,8 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class InMemoryVoteRepository implements VoteRepository {
-    private final Map<String,Vote> votes = new HashMap<>();
-
+    private final Map<String, Vote> votes = new HashMap<>();
 
 
     @Override
@@ -22,6 +21,6 @@ public class InMemoryVoteRepository implements VoteRepository {
 //    }
 
     public void feed(String answerId, int i) {
-        votes.put(answerId,new Vote(answerId,i));
+        votes.put(answerId, new Vote(answerId, i));
     }
 }
