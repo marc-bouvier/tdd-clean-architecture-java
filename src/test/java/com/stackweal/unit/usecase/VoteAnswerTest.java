@@ -56,6 +56,8 @@ public class VoteAnswerTest {
 
             @Test
             void shouldPerformTheUseCaseInATransaction() {
+                // By having a trasactions that suppress the execution of the behaviour tested
+                // we deduce by negation that transaction wraps use case or not
                 transactionPerformer = new NullTransaction();
                 vote(brunoVisitorId);
                 assertThat(voteRepository.myVotes(answerId, brunoVisitorId)).isEmpty();
