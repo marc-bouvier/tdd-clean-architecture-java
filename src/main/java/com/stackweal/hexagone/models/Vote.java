@@ -11,12 +11,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class Vote {
-@Getter
+    @Getter
     private String answerId;
     private String visitorId;
 
 
-    public Vote(String answerId,String visitorId) {
+    public Vote(String answerId, String visitorId) {
         this.answerId = answerId;
         this.visitorId = visitorId;
     }

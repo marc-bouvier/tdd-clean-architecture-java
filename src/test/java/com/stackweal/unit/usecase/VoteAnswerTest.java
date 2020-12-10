@@ -15,7 +15,8 @@ public class VoteAnswerTest {
 
     private final InMemoryVoteRepository voteRepository = new InMemoryVoteRepository();
     private final String answerId = "333abc";
-    private String visitorId = "777abc";
+    private String brunoVisitorId = "777abc";
+    private String cecileVisitorId = "888abc";
 
     @Nested
     class ExistingAnswer {
@@ -25,33 +26,34 @@ public class VoteAnswerTest {
             @Test
             void shouldVoteForItForTheFirstTime() {
 
-                vote();
-                assertAnswerVote(visitorId, answerId);
+                vote(brunoVisitorId);
+                assertAnswerVote(brunoVisitorId, answerId);
             }
         }
 
-//        @Nested
-//        class ExistingVote {
-//            @Test
-//            void shouldVoteForItForTheFirstTime() {
-//
-//                vote();
-//                assertAnswerVote(2);
-//            }
-//        }
+        @Nested
+        class ExistingVoteFromAnotherAuthor {
+            @Test
+            void shouldBeAbleToVoteForIt() {
+                existingVote(answerId, brunoVisitorId);
+                vote(cecileVisitorId);
+                assertAnswerVote(cecileVisitorId, answerId);
+            }
+        }
 
     }
 
-//    private void existingVote(visitorId) {
-//        voteRepository.feed(answerId, value);
-//    }
+    private void existingVote(String answerId, String visitorId) {
+        voteRepository.existingVote(answerId, visitorId);
+    }
 
     private void assertAnswerVote(String visitorId, String answerId) {
         assertThat(voteRepository.byIds(visitorId, answerId))
                 .isEqualTo(Optional.of(new Vote(answerId, visitorId))); // une seule réponse pour le moment (micro-test)
     }
 
-    private void vote() {
+    private void vote(String visitorId) {
+
         new VoteAnswer(voteRepository).handle(visitorId, answerId);
     }
 

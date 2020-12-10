@@ -26,4 +26,7 @@ public class InMemoryVoteRepository implements VoteRepository {
      votes.put(vote.getAnswerId(), Collections.singleton(vote));
     }
 
+    public void existingVote(String answerId, String visitorId) {
+        this.save(new Vote(answerId, visitorId));
+    }
 }
