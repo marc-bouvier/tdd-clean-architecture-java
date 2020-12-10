@@ -4,26 +4,41 @@ import com.stackweal.hexagone.gateways.VoteRepository;
 import com.stackweal.hexagone.models.Vote;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class InMemoryVoteRepository implements VoteRepository {
-    private final Map<String, Set<Vote>> votes = new HashMap<>();
+    private final Map<String, List<Vote>> votes = new HashMap<>();
 
 
     @Override
-    public Optional<Vote> byIds(String visitorId, String answerId) {
+    public List<Vote> byIds(String answerId, String visitorId) {
 
-
-        Set<Vote> answerVotes = votes.get(answerId);
-        if(answerVotes==null){
-            return Optional.empty();
+        List<Vote> votes = this.votes.get(answerId);
+        if (votes == null) {
+            return Collections.emptyList();
         }
-        return answerVotes.stream()
-                .filter(vote -> vote.author(visitorId)).findFirst();
+        return votes.stream()
+                .filter(vote -> vote.author(visitorId))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean hasNeverVotedYet(String answerId, String visitorId) {
+        return byIds(answerId, visitorId).isEmpty();
+
     }
 
     @Override
     public void save(Vote vote) {
-     votes.put(vote.getAnswerId(), Collections.singleton(vote));
+        List<Vote> visitorVotes = this.byIds(vote.getAnswerId(), vote.getVisitorId());
+        if (visitorVotes == null) {
+            votes.put(vote.getAnswerId(), Collections.singletonList(vote));
+        } else {
+            List<Vote> newVisitorVotes = new ArrayList<>(visitorVotes);
+            newVisitorVotes.add(vote);
+
+            votes.put(vote.getAnswerId(), newVisitorVotes);
+        }
     }
 
     public void existingVote(String answerId, String visitorId) {

@@ -13,6 +13,7 @@ import lombok.ToString;
 public class Vote {
     @Getter
     private String answerId;
+    @Getter
     private String visitorId;
 
 
