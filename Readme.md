@@ -272,3 +272,23 @@ Ainsi on est obligé d'utiliser les API publiques.
 ## Comment est gérée la concurrence pour un vote dans stackoverflow?
 
 Ils utilisent une BDD graphe, un vote c'est une relation vers une question.
+
+
+## Transactions
+
+Comment mettre en valeur la transaction.
+
+Pourquoi ne pas encapsuler la transaction dans le save du repo?
+
+Si une exception arrive à la suite de l'appel du repo (dans le use case par ex.)
+
+Donc l'ensemble du handle doit gérer une transaction.
+
+Ex. Programmatic transaction de Spring.
+
+Comment enforcer le fait de devoir utiliser une transaction dans un usecase.
+
+## Appliquer TDD sur du legacy
+
+J'essaye de réécrire le code de zéro en TDD. 
+

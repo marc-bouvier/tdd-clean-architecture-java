@@ -7,41 +7,43 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class InMemoryVoteRepository implements VoteRepository {
+
     private final Map<String, List<Vote>> votes = new HashMap<>();
-
-
-    @Override
-    public List<Vote> byIds(String answerId, String visitorId) {
-
-        List<Vote> votes = this.votes.get(answerId);
-        if (votes == null) {
-            return Collections.emptyList();
-        }
-        return votes.stream()
-                .filter(vote -> vote.author(visitorId))
-                .collect(Collectors.toList());
-    }
 
     @Override
     public boolean hasNeverVotedYet(String answerId, String visitorId) {
-        return byIds(answerId, visitorId).isEmpty();
-
+        return myVotes(answerId, visitorId).isEmpty();
     }
 
     @Override
     public void save(Vote vote) {
-        List<Vote> visitorVotes = this.byIds(vote.getAnswerId(), vote.getVisitorId());
-        if (visitorVotes == null) {
+        List<Vote> visitorVotes = myVotes(vote.getAnswerId(), vote.getVisitorId());
+        if (visitorVotes == null)
             votes.put(vote.getAnswerId(), Collections.singletonList(vote));
-        } else {
-            List<Vote> newVisitorVotes = new ArrayList<>(visitorVotes);
+        else {
+            List<Vote> existingVotes = votes.get(vote.getAnswerId());
+            List<Vote> newVisitorVotes = new ArrayList<>();
+            if (existingVotes != null)
+                newVisitorVotes.addAll(existingVotes);
             newVisitorVotes.add(vote);
-
             votes.put(vote.getAnswerId(), newVisitorVotes);
         }
     }
 
-    public void existingVote(String answerId, String visitorId) {
+    /**
+     * @apiNote not production code.
+     */
+    public void setExistingVote(String answerId, String visitorId) {
         this.save(new Vote(answerId, visitorId));
+    }
+
+    /**
+     * @apiNote not production code.
+     */
+    public List<Vote> myVotes(String answerId, String visitorId) {
+        List<Vote> answerVotes = votes.get(answerId);
+        if (answerVotes == null)
+            return Collections.emptyList();
+        return answerVotes.stream().filter(vote -> vote.author(visitorId)).collect(Collectors.toList());
     }
 }
