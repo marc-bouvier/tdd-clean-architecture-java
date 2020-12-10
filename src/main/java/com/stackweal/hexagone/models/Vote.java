@@ -1,6 +1,7 @@
 package com.stackweal.hexagone.models;
 
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 /**
@@ -10,16 +11,18 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class Vote {
-
+@Getter
     private String answerId;
-    private int value;
+    private String visitorId;
 
-    public Vote(String answerId, int value) {
+
+    public Vote(String answerId,String visitorId) {
         this.answerId = answerId;
-        this.value = value;
+        this.visitorId = visitorId;
     }
 
-    public void increment() {
-        this.value += 1;
+
+    public boolean author(String visitorId) {
+        return this.visitorId.equals(visitorId);
     }
 }

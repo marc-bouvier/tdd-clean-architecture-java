@@ -3,24 +3,27 @@ package com.stackweal.adapters.secondary.gateways;
 import com.stackweal.hexagone.gateways.VoteRepository;
 import com.stackweal.hexagone.models.Vote;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class InMemoryVoteRepository implements VoteRepository {
-    private final Map<String, Vote> votes = new HashMap<>();
+    private final Map<String, Set<Vote>> votes = new HashMap<>();
 
 
     @Override
-    public Vote byAnswerId(String answerId) {
-        return votes.get(answerId);
+    public Optional<Vote> byIds(String visitorId, String answerId) {
+
+
+        Set<Vote> answerVotes = votes.get(answerId);
+        if(answerVotes==null){
+            return Optional.empty();
+        }
+        return answerVotes.stream()
+                .filter(vote -> vote.author(visitorId)).findFirst();
     }
 
-//    @Override
-//    public void save(String answerId, Vote vote) {
-//        votes.put(answerId,vote);
-//    }
-
-    public void feed(String answerId, int i) {
-        votes.put(answerId, new Vote(answerId, i));
+    @Override
+    public void save(Vote vote) {
+     votes.put(vote.getAnswerId(), Collections.singleton(vote));
     }
+
 }

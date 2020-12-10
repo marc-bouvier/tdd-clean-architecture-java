@@ -15,8 +15,9 @@ public class VoteAnswer {
         this.voteRepository = voteRepository;
     }
 
-    public void handle(String answerId) {
-        Vote vote = voteRepository.byAnswerId(answerId);
-        vote.increment();
+    public void handle(String visitorId, String answerId) {
+//        Vote vote = voteRepository.byIds(visitorId,answerId);
+        voteRepository.save(new Vote(answerId, visitorId));
+
     }
 }
