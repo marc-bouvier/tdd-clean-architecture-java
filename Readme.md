@@ -104,7 +104,7 @@ Nommage des choses : classes, méthodes variables.
 
 Pouvoir lire le code comme une histoire.
 
-Il peut y avoir des commmentaires utiles. 
+Il peut y avoir des commentaires utiles. 
 ex. Raisons pour lesquelles on a du faire un workaround( pourquoi on a fait un choix inattendu)
 
 > Extract till you drop 
@@ -150,7 +150,10 @@ Différent de tester le comment (on peut le faire mais on efface le test après)
 > Je n'ai pas de framework de mock!
 -> La tentation de faire mal
 
-![](docs/assets/TDD_transformation_cheat_sheet.png)
+[![](docs/assets/TDD_transformation_cheat_sheet.png)](https://miro.medium.com/max/1020/1*tw0QBYz-LSwBnaiCD0c7iA.jpeg)
+https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html
+https://medium.com/@zolipeto/extract-of-uncle-bobs-transformation-priority-premise-post-85ab20216fb1
+[Transformation Priority Premise - NDC conf 2011 Uncle bob](https://www.youtube.com/watch?v=B93QezwTQpI&feature=youtu.be&t=187)
 
 ## Attention cucumber
 
@@ -290,5 +293,65 @@ Comment enforcer le fait de devoir utiliser une transaction dans un usecase.
 
 ## Appliquer TDD sur du legacy
 
-J'essaye de réécrire le code de zéro en TDD. 
+J'essaye de réécrire le code de zéro en TDD.
+
+
+## Ajouter l'infrastructire dans la clean architecture
+
+Une question avec plusieurs réponses. et le nombre de votes. 
+
+- Lister les questions et les réponses
+- Pouvoir voter pour différentes réponses
+
+
+Package "write"
+Package "read" (pas forcément le meme modèle que l'écriture)
+- Ici on peut se permettre de combiner les aggrégats (il n'y a pas de pb de concurrence)
+
+Read et write ont chacun un hexagone différent. Ils peuvent potentiellement ^être sur des
+processus différents.
+
+Heuristique quand on commence à écrire un nom de test "shouldNotReadAnyPAge**IfPageDoesNotExists**"
+Ca indique qu'on devrait introduire une nested class
+
+```java
+@Nested class
+NotExistingPages {
+    @Test
+    void shouldNotReadAnyPage(){
+    }
+}
+```
+
+https://www.baeldung.com/spring-programmatic-transaction-management
+
+Tout ce qui appele le use case c'est un adapter primaire
+Tout ce qui est appelé par le use case c'est un adapter secondaire
+
+ReadPage aura la responsabilité de disre si tu as accès ou pas à la donnée etc...
+
+Qui fait le lien entre le InMemoryRepository et le InMemoryQuery
+
+Mettre en commun les ids. Quand on a un vote, on va pouvoir lister les votes.
+
+2 Inmemory 
+- un expres pour les tests  `InMemoryPageQueryStub`
+- un pour la prod  `InMemoryPageQuery` où on fait le vrai lien entre la lecture et l'écriture par ex.
+
+Easy exception  test
+
+![](docs/assets/test_exception.PNG)
+
+Presenter : adapte le retour du service à ce qu'on veut à l'écran.
+
+
+- UUID générés depuis le front.
+- Switch implem à chaud
+- Lire le livre rouge
+- Presenter
+    - Le service va prendre en paramètre un presenter
+
+Autres questions. On garde contact.
+
+Poser des questions je peux (event sourcing, CQRS)
 
